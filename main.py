@@ -7,10 +7,7 @@ def create_uuid_string(length: int) -> str:
     return str(uuid.uuid4()).replace("-","")[:length]
 
 
-def create_random_picture(
-    x: int,
-    y: int
-):
+def create_random_picture(x: int, y: int):
     with open(f'pics/{create_uuid_string(8)}.jpg', "wb") as f:
         f.write(requests.get(f"https://picsum.photos/{x}/{y}").content)
 
